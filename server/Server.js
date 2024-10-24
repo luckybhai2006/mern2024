@@ -1,45 +1,29 @@
+const connectdb = require("./utils/db");
 const express = require("express");
 const path = require("path");
 const app = express();
+
+// Import your routes
 const authRoute = require("./router/auth-router");
 const contactRoute = require('./router/contact-router');
 const serviceRoute = require('./router/service-router');
-const AdminRoute = require('./router/admin-router');
-const connectdb = require("./utils/db");
-const errorMiddleware = require('./middlewares/error-middleware');
-const cors = require("cors");
+const adminRoute = require('./router/admin-router');
 
-// CORS MIDDLEWARE
-const corsOption = {
-   // origin: "http://localhost:5173",
-   origin: "*",
-   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
-   credentials: true,
-};
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
-app.use(cors(corsOption));
-
-// MIDDLEWARE
-app.use(express.json());
-
-// API Routes
+// API routes
 app.use('/api/auth', authRoute);
 app.use('/api/contact', contactRoute);
 app.use('/api/service', serviceRoute);
-app.use('/api/admin', AdminRoute);
+app.use('/api/admin', adminRoute);
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client', 'dist'))); // Adjust the path to your build folder
-
-// Catch-all route to serve index.html for all other routes
+// Catch-all handler for serving React app
 app.get('*', (req, res) => {
-   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html')); // Adjust the path to your build folder
+   res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
 
-// Error middleware
-app.use(errorMiddleware);
-
-// Connect to the database and start the server
+// Start server after connecting to the database
 connectdb().then(() => {
    app.listen(process.env.PORT || 5000, '0.0.0.0', () => {
       console.log('Server is running at port 5000');
