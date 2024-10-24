@@ -1,0 +1,35 @@
+/* index.css */
+
+/* Apply a basic CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  /* background-color: #f0f0f0; */
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* react toast */
+/* .toastBody{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #10171D;
+  font-size: 0.875rem !important;
+} */
