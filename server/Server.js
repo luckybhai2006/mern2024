@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // API routes
 app.use('/api/auth', authRoute);
-app.use('/api/contact', contactRoute);
+app.use('/api/auth', contactRoute);
 app.use('/api/auth', serviceRoute);
 app.use('/api/admin', AdminRoute);
 
