@@ -14,8 +14,8 @@ body {
 }
 
 main {
-  background-image: url("https://w0.peakpx.com/wallpaper/470/780/HD-wallpaper-abstract-black-red-galaxy-logo-best-note-pure-logos-thumbnail.jpg");
-  background-color: black;
+  /* background-image: url("https://w0.peakpx.com/wallpaper/470/780/HD-wallpaper-abstract-black-red-galaxy-logo-best-note-pure-logos-thumbnail.jpg"); */
+  /* background-color: black; */
   background-size: cover;
   background-repeat: no-repeat;
   height: 720px;
@@ -27,7 +27,7 @@ main {
 /* Section Registration Styles */
 
 .section-registration {
-  background-image: url("https://w0.peakpx.com/wallpaper/470/780/HD-wallpaper-abstract-black-red-galaxy-logo-best-note-pure-logos-thumbnail.jpg");
+  /* background-image: url("https://w0.peakpx.com/wallpaper/470/780/HD-wallpaper-abstract-black-red-galaxy-logo-best-note-pure-logos-thumbnail.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   
