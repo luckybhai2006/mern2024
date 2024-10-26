@@ -18,7 +18,6 @@ const corsOptions = {
    credentials: true,
 };
 app.use(cors(corsOptions));
-
 // Middleware for parsing JSON requests
 app.use(express.json());
 
@@ -35,6 +34,10 @@ app.use('/api/admin', AdminRoute);
 app.get('*', (req, res) => {
    res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
+
+app.get('/',(req, res) => {
+   res.json("hello lalit pandey")
+})
 
 // Error middleware
 app.use(errorMiddleware);
