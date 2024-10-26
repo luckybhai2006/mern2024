@@ -89,7 +89,7 @@ const params = useParams();
     // Fetch user data by ID
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://192.168.1.41:5000/api/admin/users/${params.id}`, {
+        const response = await fetch(`https://mern2024-ui.onrender.com/api/admin/users/${params.id}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -122,7 +122,7 @@ const params = useParams();
     const token = localStorage.getItem('token');
     
     try {
-      const response = await fetch(`http://192.168.1.37:5000/api/admin/users/update${params.id}`, {
+      const response = await fetch(`https://mern2024-ui.onrender.com/api/admin/users/update${params.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

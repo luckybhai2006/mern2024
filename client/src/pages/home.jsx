@@ -16,8 +16,8 @@ const Home = () => {
                      are you redy to take your business to thanest level with cutting-edge IT solutions? Look no further! At thenical boys, we specalize in providing inovative IT services and solutions tailored to meet your unique needs.
                   </p>
                   <div className="btn btn-group">
-                     <a href="/contact"><button className="btn" style={{ background: "#61dafb", color: "black", fontWeight: "700" }}>Contact Now</button></a>
-                     <a href="/services"><button className="btn secondary-btn" style={{ background: "#61dafb", color: "black", fontWeight: "700" }}>Learn More</button></a>
+                     <a href="#/contact"><button className="btn" style={{ background: "#61dafb", color: "black", fontWeight: "700" }}>Contact Now</button></a>
+                     <a href="#/services"><button className="btn secondary-btn" style={{ background: "#61dafb", color: "black", fontWeight: "700" }}>Learn More</button></a>
                   </div>
                </div>
                {/* Hero Section */}

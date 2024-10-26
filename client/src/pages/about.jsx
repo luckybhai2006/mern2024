@@ -52,7 +52,7 @@ const About = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch("http://192.168.1.41:5000/api/auth/user", {
+        const response = await fetch("https://mern2024-ui.onrender.com/api/auth/user", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`

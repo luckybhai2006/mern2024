@@ -14,6 +14,7 @@ import AdminUsers from "./pages/Admin-Users"
 import AdminUpdate from "./pages/Admin-Update"
 import AdminContacts from "./pages/Admin-Contacts"
 import './App.css'
+import AdminServices from "./pages/Admin-Services"
 
 function App() {
 
@@ -31,8 +32,10 @@ function App() {
       <Route path="/logout" element={<Logout/>} />
       <Route path="*" element={<ErrorPage/>} />
       <Route path="/admin" element={<AdminLayout/>}>
+      <Route index element={<AdminUsers />} /> {/* Default page for /admin */}
         <Route path="users" element={<AdminUsers/>}/>
         <Route path="contacts" element={<AdminContacts/>}/>
+        <Route path="service" element={<AdminServices/>}/>
         <Route path="users/:id/edit" element={<AdminUpdate/>}/>
       </Route>
     </Routes>

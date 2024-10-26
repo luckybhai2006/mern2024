@@ -31,7 +31,7 @@ const Register = () => {
       console.log(user);
     
       try {
-        const response = await fetch(`http://192.168.1.41:5000/api/auth/register`, {
+        const response = await fetch(`https://mern2024-ui.onrender.com/api/auth/register`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(user),

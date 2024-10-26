@@ -163,7 +163,7 @@ const AdminContacts = () => {
    const token1 = localStorage.getItem('token');
    const deleteContact = async (id) => {
       try {
-         const response = await fetch(`http://192.168.1.41:5000/api/admin/contacts/delete/${id}`, {
+         const response = await fetch(`https://mern2024-ui.onrender.com/api/admin/contacts/delete/${id}`, {
             method: "DELETE",
             headers: {
                Authorization: `Bearer ${token1}`
