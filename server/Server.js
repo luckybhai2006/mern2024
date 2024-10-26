@@ -13,7 +13,7 @@ const errorMiddleware = require('./middlewares/error-middleware');
 
 // CORS MIDDLEWARE
 const corsOptions = {
-   origin: "*",
+   origin: "https://mern2024-1whq.vercel.app",
    methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
    credentials: true,
 };
