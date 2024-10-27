@@ -28,9 +28,6 @@ app.use('/api/auth', authRoute);
 app.use('/api/auth', contactRoute); // Changed to /api/contact
 app.use('/api/auth', serviceRoute); // Changed to /api/service
 app.use('/api/admin', AdminRoute); // Kept the same
-app.use('/api/auth', contactRoute);  // Updated to unique paths
-app.use('/api/auth', serviceRoute);  // Updated to unique paths
-app.use('/api/admin', AdminRoute);
 
 app.use(errorMiddleware);
 
