@@ -25,7 +25,7 @@ const Services = () => {
   useEffect(() => {
     const getService = async () => {
       try {
-        const response = await fetch("https://mern2024-ui.onrender.com/api/auth/service", {
+        const response = await fetch("https://mern2024-2095.onrender.com/api/auth/service", {
           method: "GET",
         });
         if (response.ok) {

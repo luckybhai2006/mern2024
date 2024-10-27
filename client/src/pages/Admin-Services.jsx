@@ -30,7 +30,7 @@ const AdminServices = () => {
 
   const getService = async () => {
     try {
-      const response = await fetch("https://mern2024-ui.onrender.com/api/auth/service", { method: "GET" });
+      const response = await fetch("https://mern2024-2095.onrender.com/api/auth/service", { method: "GET" });
       if (response.ok) {
         const data = await response.json();
         setServices(data.message);
@@ -48,7 +48,7 @@ const AdminServices = () => {
     const endpoint = isEditMode ? `/api/auth/service/${currentService._id}` : "/api/auth/service";
     
     try {
-        const response = await fetch(`https://mern2024-ui.onrender.com${endpoint}`, {
+        const response = await fetch(`https://mern2024-2095.onrender.com${endpoint}`, {
             method,
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(currentService),
@@ -70,7 +70,7 @@ const AdminServices = () => {
 
   const handleDeleteService = async (id) => {
     try {
-      const response = await fetch(`https://mern2024-ui.onrender.com/api/auth/service/${id}`, { method: "DELETE" });
+      const response = await fetch(`https://mern2024-2095.onrender.com/api/auth/service/${id}`, { method: "DELETE" });
       if (response.ok) {
         setServices(services.filter((service) => service._id !== id));
       }

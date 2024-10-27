@@ -126,7 +126,7 @@ const AdminUsers = () => {
 
       const getAllUserData = async () => {
          try {
-            const response = await fetch("https://mern2024-ui.onrender.com/api/admin/users", {
+            const response = await fetch("https://mern2024-2095.onrender.com/api/admin/users", {
                method: "GET",
                headers: {
                   Authorization: `Bearer ${token}`
@@ -146,7 +146,7 @@ const AdminUsers = () => {
    const deleteUser = async (id) => {
       const token = localStorage.getItem('token');
       try {
-         const response = await fetch(`https://mern2024-ui.onrender.com/api/admin/users/delete/${id}`, {
+         const response = await fetch(`https://mern2024-2095.onrender.com/api/admin/users/delete/${id}`, {
             method: "DELETE",
             headers: {
                Authorization: `Bearer ${token}`

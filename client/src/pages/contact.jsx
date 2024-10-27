@@ -19,7 +19,7 @@ const Contact = () => {
     const fetchUserData = async () => {
       try {
         // we use IP adress insted of local storage 
-        const response = await fetch("https://mern2024-ui.onrender.com/api/auth/user", {
+        const response = await fetch("https://mern2024-2095.onrender.com/api/auth/user", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`

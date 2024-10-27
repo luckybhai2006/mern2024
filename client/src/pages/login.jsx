@@ -27,7 +27,7 @@ const Login = () => {
       console.log(user)
 
       try {
-         const response = await fetch(`https://mern2024-ui.onrender.com/api/auth/login`, { 
+         const response = await fetch(`https://mern2024-2095.onrender.com/api/auth/login`, { 
             method: "POST", 
             headers: { "Content-Type": "application/json" }, 
             body: JSON.stringify(user) 
