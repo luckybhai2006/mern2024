@@ -13,7 +13,7 @@ const AdminLayout = () => {
         const checkAdminStatus = async () => {
             try {
                 setIsLoading(true); // Start loading
-                const response = await fetch('https://mern2024-2095.onrender.com//api/auth/user', {
+                const response = await fetch('https://mern2024-2095.onrender.com/api/auth/user', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
