@@ -13,13 +13,13 @@ const AdminRoute = require('./router/admin-router');
 const app = express();
 
 // CORS Middleware
-// const corsOptions = {
-//    origin: "*", // Change to a specific origin in production
-//    methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
-//    credentials: true,
-// };
-// app.use(cors(corsOptions));
-app.use(cors);
+const corsOptions = {
+   origin: "*", // Change to a specific origin in production
+   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+   credentials: true,
+};
+app.use(cors(corsOptions));
+// app.use(cors);
 
 // Middleware for parsing JSON requests
 app.use(express.json());
