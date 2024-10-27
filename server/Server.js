@@ -19,7 +19,7 @@ const app = express();
 //    credentials: true,
 // };
 // app.use(cors(corsOptions));
-app.use(cors);
+app.use(cors());
 
 // Middleware for parsing JSON requests
 app.use(express.json());
