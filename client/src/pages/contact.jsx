@@ -68,7 +68,7 @@ const Contact = () => {
     // console.log(contact);
 
     try {
-      const response = await fetch(`https://mern2024-ui.onrender.com/api/auth/contact`, {
+      const response = await fetch(`https://mern2024-2095.onrender.com/api/auth/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(contact)
