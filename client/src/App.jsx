@@ -15,6 +15,7 @@ import AdminUpdate from "./pages/Admin-Update"
 import AdminContacts from "./pages/Admin-Contacts"
 import './App.css'
 import AdminServices from "./pages/Admin-Services"
+import ServiceDetails from "./pages/servicesDetail"
 
 function App() {
 
@@ -27,6 +28,8 @@ function App() {
       <Route path="/about" element={<About/>} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/services" element={<Services/>} />
+      <Route path="/service/:id" element={<ServiceDetails />} />
+
       <Route path="/register" element={<Register/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/logout" element={<Logout/>} />

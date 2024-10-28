@@ -10,7 +10,6 @@ const Logout = () => {
       const LogoutUser = () => {
          setToken('');
          return localStorage.removeItem('token')
-         
       }
       LogoutUser()
    },[token]);

@@ -5,9 +5,11 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 const cardStyle = `
   .card10 {
     width: 100%;
-    height: 103%;
-    border: 3px solid #61dafb;
-    border-radius:20px;
+    height: 100%;
+     margin-Top:20px;
+     border: 3px solid #61dafb;
+     border-radius:20px;
+    font-size:17px;
     color:white;
     font-weight: bold;
     transition: transform 0.3s ease, border 0.3s ease;
@@ -16,6 +18,15 @@ const cardStyle = `
     transform: scale(1.05);
     border: 4px solid white;
   }
+  .row{
+  margin-bottom:50px
+  }
+  .card-body {
+   text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    
+}
 `;
 
 const AdminServices = () => {
@@ -30,7 +41,7 @@ const AdminServices = () => {
 
   const getService = async () => {
     try {
-      const response = await fetch("https://mern2024-2095.onrender.com/api/auth/service", { method: "GET" });
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/service`, { method: "GET" });
       if (response.ok) {
         const data = await response.json();
         setServices(data.message);
@@ -46,31 +57,31 @@ const AdminServices = () => {
     e.preventDefault();
     const method = isEditMode ? "PUT" : "POST";
     const endpoint = isEditMode ? `/api/auth/service/${currentService._id}` : "/api/auth/service";
-    
+
     try {
-        const response = await fetch(`https://mern2024-2095.onrender.com${endpoint}`, {
-            method,
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(currentService),
-        });
-        
-        if (response.ok) {
-            await getService();
-            setShowModal(false);
-            setCurrentService({ service: '', description: '', price: '', provider: '' });
-        } else {
-            const errorData = await response.json();
-            console.error('Update failed:', errorData);
-        }
+      const response = await fetch(`${import.meta.env.VITE_API_URL}${endpoint}`, {
+        method,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(currentService),
+      });
+
+      if (response.ok) {
+        await getService();
+        setShowModal(false);
+        setCurrentService({ service: '', description: '', price: '', provider: '' });
+      } else {
+        const errorData = await response.json();
+        console.error('Update failed:', errorData);
+      }
     } catch (error) {
-        console.error(`Error ${isEditMode ? 'updating' : 'adding'} service:`, error);
+      console.error(`Error ${isEditMode ? 'updating' : 'adding'} service:`, error);
     }
-};
+  };
 
 
   const handleDeleteService = async (id) => {
     try {
-      const response = await fetch(`https://mern2024-2095.onrender.com/api/auth/service/${id}`, { method: "DELETE" });
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/service/${id}`, { method: "DELETE" });
       if (response.ok) {
         setServices(services.filter((service) => service._id !== id));
       }
@@ -100,9 +111,9 @@ const AdminServices = () => {
           {services.map((currElm, index) => {
             const { _id, description, price, provider, service } = currElm;
             return (
-              <div className="col-md-4" key={index} style={{ marginBottom: '60px' }}>
+              <div className="col-md-4" key={index} style={{ marginBottom: '30px' }}>
                 <div className="card10">
-                  <img src="/images/design.png" className="card-img-top" alt="Card image" />
+                  {/* <img src="/images/design.png" className="card-img-top" alt="Card image" /> */}
                   <div className="card-body">
                     <h5 className="card-title">{service}</h5>
                     <p className="card-text">{description}</p>
@@ -124,18 +135,19 @@ const AdminServices = () => {
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">{isEditMode ? 'Edit Service' : 'Add New Service'}</h5>
+                <h5 className="modal-title" style={{ color: 'black' }}>{isEditMode ? 'Edit Service' : 'Add New Service'}</h5>
                 <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
               </div>
               <form onSubmit={handleAddOrUpdateService}>
                 <div className="modal-body">
                   <input
                     type="text"
-                    className="form-control my-2"
+                    className="form-control my-12"
                     placeholder="Service Name"
                     value={currentService.service}
                     onChange={(e) => setCurrentService({ ...currentService, service: e.target.value })}
                     required
+                    style={{ borderColor: '#61dafb', borderWidth: '4px' }}
                   />
                   <textarea
                     className="form-control my-2"
@@ -143,6 +155,7 @@ const AdminServices = () => {
                     value={currentService.description}
                     onChange={(e) => setCurrentService({ ...currentService, description: e.target.value })}
                     required
+                    style={{ borderColor: '#61dafb', borderWidth: '4px' }}
                   />
                   <input
                     type="text"
@@ -151,6 +164,7 @@ const AdminServices = () => {
                     value={currentService.price}
                     onChange={(e) => setCurrentService({ ...currentService, price: e.target.value })}
                     required
+                    style={{ borderColor: '#61dafb', borderWidth: '4px' }}
                   />
                   <input
                     type="text"
@@ -159,6 +173,7 @@ const AdminServices = () => {
                     value={currentService.provider}
                     onChange={(e) => setCurrentService({ ...currentService, provider: e.target.value })}
                     required
+                    style={{ borderColor: '#61dafb', borderWidth: '4px' }}
                   />
                 </div>
                 <div className="modal-footer">

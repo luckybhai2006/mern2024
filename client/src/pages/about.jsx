@@ -52,7 +52,7 @@ const About = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch("https://mern2024-2095.onrender.com/api/auth/user", {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/user`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`

@@ -143,7 +143,7 @@ const AdminContacts = () => {
 
       const getAllUserData = async () => {
          try {
-            const response = await fetch("https://mern2024-2095.onrender.com/api/admin/contact", {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/contact`, {
                method: "GET",
                headers: {
                   Authorization: `Bearer ${token}`
@@ -163,20 +163,17 @@ const AdminContacts = () => {
    const token1 = localStorage.getItem('token');
    const deleteContact = async (id) => {
       try {
-         const response = await fetch(`https://mern2024-2095.onrender.com/api/admin/contacts/delete/${id}`, {
+         const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/contacts/delete/${id}`, {
             method: "DELETE",
             headers: {
                Authorization: `Bearer ${token1}`
             }
          })
          if(response.ok) {
-            // Filter out the deleted user
             setContact(prevUsers => prevUsers.filter(user => user._id !== id));
          } else {
             console.log('Failed to delete user');
          }
-         // const data = await response.json();
-         // console.log("User afer delete", data)
       } catch (error) {
          console.log("error", error);
       }

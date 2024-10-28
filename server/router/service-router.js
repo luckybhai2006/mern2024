@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllServices, addService, updateService, deleteService } = require('../controllers/service-controllers');
+const { getAllServices, addService, updateService, deleteService, getServiceById } = require('../controllers/service-controllers');
 
 // GET all services
 router.get('/service', getAllServices);
@@ -14,4 +14,6 @@ router.put('/service/:id', updateService);
 // DELETE a service by ID
 router.delete('/service/:id', deleteService);
 
+// Route to get service by ID
+router.get('/servic/:id', getServiceById); 
 module.exports = router;

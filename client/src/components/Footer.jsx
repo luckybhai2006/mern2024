@@ -8,10 +8,11 @@ const styles = `
     width: 100%;
     background-color: black;
     padding: 10px;
-    // height: 3rem;
+    // height: 5rem;
   }
 
   .card {
+  height:60px;
     width: 100%;
     margin: auto;
     background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbKJK-pxTCDTIiXIGlnDKS-QpnKBO0EbptFA&s");
@@ -20,8 +21,9 @@ const styles = `
     font-weight: bold;
     background-color:grey;
   }
-  .card-body {
+  .card-bodyy {
     text-align: center;
+    margin-Top: 17px
   }
 `;
 
@@ -31,7 +33,7 @@ const Footer = () => {
       <style>{styles}</style>
       <div className="footer2">
         <div className="card">
-          <div className="card-body">
+          <div className="card-bodyy">
           @All rights reserved.
           </div>
         </div>
