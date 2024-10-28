@@ -115,7 +115,7 @@ const AdminServices = () => {
                 <div className="card10">
                   {/* <img src="/images/design.png" className="card-img-top" alt="Card image" /> */}
                   <div className="card-body">
-                    <h5 className="card-title">{service}</h5>
+                    <h5 className="card-title"><u style={{color:'red'}}>{service}</u></h5>
                     <p className="card-text">{description}</p>
                     <p className="card-text">Price: {price}</p>
                     <p className="card-text">Provided by: {provider}</p>

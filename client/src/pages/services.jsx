@@ -14,11 +14,11 @@ const cardStyle = `
     transition: transform 0.3s ease, border 0.3s ease;
   }
   .card10:hover {
-    transform: scale(1.01);
+    transform: scale(1.05);
     border: 4px solid white;
   }
-    .card-body{ 
-    text-align: center;
+    .row{
+    margin-bottom: 40px;
     }
 `;
 
@@ -56,7 +56,7 @@ const Services = () => {
     if (!isAuthenticated) {
       setShowPopup(true);
     } else {
-      navigate(`/service/${serviceId}`);
+      navigate(`/serv-detail`);
     }
   };
 
@@ -70,14 +70,14 @@ const Services = () => {
       <div className="container">
         <div className="row">
           {services.map((currELm, index) => {
-            const { description, price, provider, service, _id } = currELm;
+            const { description, price, provider, service } = currELm;
 
             return (
-              <div className="col-md-4" key={index} style={{ marginBottom: '40px' }}>
+              <div className="col-md-4" key={index} style={{ marginBottom: '30px',textAlign:"center"}}>
                 <div className="card10">
                   <img src="/images/design.png" className="card-img-top" alt="Card image" />
                   <div className="card-body">
-                    <h5 className="card-title">{service}</h5>
+                    <h5 className="card-title"><u>{service}</u></h5>
                     <p className="card-text">{description}</p>
                     <p className="card-text">Price: {price}</p>
                     <p className="card-text">Provided by: {provider}</p>
@@ -85,7 +85,7 @@ const Services = () => {
                       <button
                         className="btn"
                         style={{ background: "#61dafb", color: "black", fontWeight: "700", marginBottom: '20px' }}
-                        onClick={() => handleServiceClick(_id)}
+                        onClick={() => handleServiceClick()}
                       >
                         {isAuthenticated ? "Get Service" : "Register or Login to Access"}
                       </button>

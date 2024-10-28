@@ -5,17 +5,14 @@ import { faFacebook, faTwitter, faLinkedin, faInstagram } from '@fortawesome/fre
 const styles = {
   head: {
     fontSize: '2rem',
-    // backgroundColor: '#282c34',
-    // color: '#ffffff',
-    padding: '1rem 0',
-    // textAlign: 'center',
-    // marginTop: '3.8rem',
-    width: 'auto',
+    padding: '1rem',
     border: '2px solid red',
-    borderRadius:'20px', 
-    color:'white',
-    textAlign:'center', 
-    marginTop:"80px"
+    borderRadius: '20px',
+    color: 'white',
+    textAlign: 'center',
+    margin: '80px auto 20px',
+    width: '90%',
+    maxWidth: '1000px',
   },
   container: {
     backgroundColor: "black",
@@ -72,7 +69,7 @@ const About = () => {
     if (token) {
       fetchUserData();
     }
-  },[token]); // Empty dependency array means this runs once
+  }, [token]); // Empty dependency array means this runs once
 
   return (
     <>
@@ -125,41 +122,41 @@ const About = () => {
 
             <h2 style={styles.subHeading}><u>Contact Us</u></h2>
             <p style={styles.paragraph}>
-              Ready to take your business to the next level? <a href="/contact" style={{color:'skyblue'}}>Contact us</a> today to learn how we can help you achieve your goals through innovative IT solutions.
+              Ready to take your business to the next level? <a href="#/contact" style={{ color: 'skyblue' }}>Contact us</a> today to learn how we can help you achieve your goals through innovative IT solutions.
             </p>
           </div>
         </section>
-       {/* FOOTER */}
-      <div className="footer">
-         <div className="container">
-            <div className="footer-content">
-               <div className="footer-section about">
-                  <h2>About Us</h2>
-                  <p>We are a leading IT company providing top-notch solutions to our clients worldwide.</p>
-               </div>
-               <div className="footer-section links">
-                  <h2>Quick Links</h2>
-                  <ul>
-                     <li><a href="/services">Services</a></li>
-                     <li><a href="/about">About</a></li>
-                     <li><a href="/contact">Contact</a></li>
-                     <li><a href="/register">Careers</a></li>
-                  </ul>
-               </div>
-               <div className="footer-section contact">
-                  <h2>Contact Us</h2>
-                  <p>Email: info@itcompany.com</p>
-                  <p>Phone: +91 989-973-3670</p>
-                  <div className="socials">
-                     <a href="#"><FontAwesomeIcon icon={faFacebook} size="2x" /></a>
-                     <a href="#"><FontAwesomeIcon icon={faTwitter} size="2x" /></a>
-                     <a href="#"><FontAwesomeIcon icon={faLinkedin} size="2x" /></a>
-                     <a href="#"><FontAwesomeIcon icon={faInstagram} size="2x" /></a>
-                  </div>
-               </div>
-            </div>
-         </div>
       </div>
+      {/* FOOTER */}
+      <div className="footer">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-section about">
+              <h2>About Us</h2>
+              <p>We are a leading IT company providing top-notch solutions to our clients worldwide.</p>
+            </div>
+            <div className="footer-section links">
+              <h2>Quick Links</h2>
+              <ul>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#contact">Contact</a></li>
+                <li><a href="/#register">Careers</a></li>
+              </ul>
+            </div>
+            <div className="footer-section contact">
+              <h2>Contact Us</h2>
+              <p>Email: info@itcompany.com</p>
+              <p>Phone: +91 989-973-3670</p>
+              <div className="socials">
+                <a href="#"><FontAwesomeIcon icon={faFacebook} size="2x" /></a>
+                <a href="#"><FontAwesomeIcon icon={faTwitter} size="2x" /></a>
+                <a href="#"><FontAwesomeIcon icon={faLinkedin} size="2x" /></a>
+                <a href="#"><FontAwesomeIcon icon={faInstagram} size="2x" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

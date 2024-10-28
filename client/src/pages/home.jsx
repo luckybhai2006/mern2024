@@ -58,13 +58,16 @@ const Home = () => {
             {/* ------------------------------------------- */}
             <div className="hero-content">
                <h1 style={{ color: "White" }}>𝕎𝔼 𝔸ℝ𝔼 𝕋ℍ𝔼 𝕎𝕆ℝ𝕃𝔻 𝔹𝔼𝕊𝕋 𝕀𝕋 ℂ𝕆𝕄ℙ𝔸ℕ𝕐.</h1>
-               <h3>Welcome to TECHNICAL BOYS.</h3>
-               <p>
-                  are you redy to take your business to thanest level with cutting-edge IT solutions? Look no further! At thenical boys, we specalize in providing inovative IT services and solutions tailored to meet your unique needs.
-               </p>
+               <h3>Our Key Services</h3>
+         <ul>
+            <li><strong>Custom Web Development:</strong> Create powerful websites tailored to your business needs.</li>
+            <li><strong>Mobile App Solutions:</strong> Build cross-platform apps that engage users on the go.</li>
+            <li><strong>Cloud Integration:</strong> Efficient and secure cloud solutions for seamless access anywhere.</li>
+            <li><strong>24/7 Support:</strong> Get round-the-clock support to ensure your systems run smoothly.</li>
+         </ul>
                <div className="btn btn-group">
-                  <a href="/contact"><button className="btn" style={{ background: "#61dafb", color: "black", fontWeight: "700" }}>connect now</button></a>
-                  <a href="/services"><button className="btn secondary-btn" style={{ background: "#61dafb", color: "black", fontWeight: "700" }}>Services</button></a>
+               <a href="/#services"><button className="btn" style={{ background: "#61dafb", color: "black", fontWeight: "700" }}>Explore Services</button></a>
+               <a href="/#about"><button className="btn secondary-btn" style={{ background: "#61dafb", color: "black", fontWeight: "700" }}>About Us</button></a>
                </div>
             </div>
          </div>

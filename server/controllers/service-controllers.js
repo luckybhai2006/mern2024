@@ -58,19 +58,7 @@ const deleteService = async (req, res) => {
       return res.status(500).json({ error: `Error deleting service: ${error}` });
    }
 };
-// Get a individual service page by ID
-const getServiceById = async (req, res) => {
-   const { id } = req.params; // Extract the ID from the request parameters
-   try {
-      const service = await Service.findById(id);
-      if (!service) {
-         return res.status(404).json({ message: 'Service not found' });
-      }
-      res.status(200).json(service);
-   } catch (error) {
-      return res.status(500).json({ error: `Error fetching service: ${error}` });
-   }
-};
+
 
 
 module.exports = {
@@ -78,5 +66,4 @@ module.exports = {
    addService,
    updateService,
    deleteService,
-   getServiceById,
 };
