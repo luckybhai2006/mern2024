@@ -1,0 +1,29 @@
+/* Customize the NProgress bar to be red and thicker */
+#nprogress .bar {
+   background: #4cace8 !important; /* Color of the progress bar */
+   height: 5px; /* Adjust thickness, default is usually 2px */
+ }
+ 
+ /* Customize the spinner color and thickness (optional, if you're using it) */
+ #nprogress .spinner-icon {
+   border-top-color: #4cace8 !important;
+   border-left-color: #4cace8 !important;
+   width: 40px; /* Adjust spinner size */
+   height: 40px;
+ }
+ /* Custom NProgress styles */
+#nprogress {
+   pointer-events: none;
+ }
+ 
+ #nprogress .peg {
+   display: block;
+   position: absolute;
+   z-index: 1031;
+   top: 1px;
+   right: 1px;
+   width: 100px; /* Customize the width of the peg */
+   height: 100%; 
+   box-shadow: 0 0 10px #29d, 0 0 5px #29d; /* Customize the shadow effect */
+ }
+ 

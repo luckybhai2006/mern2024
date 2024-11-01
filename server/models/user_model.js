@@ -7,25 +7,26 @@ require('dotenv').config();
 const userschema = mongoose.Schema({
    username: {
       type: String,
-      requird: true
+      required: true
    },
    email: {
       type: String,
-      requird: true
+      required: true
    },
    phone: {
       type: String,
-      requird: true
+      required: true
    },
    password: {
       type: String,
-      requird: true
+      required: true
    },
    isAdmin: {
       type: Boolean,
       default: false
-   },
+   }
 });
+
 // COMPARE PASSWORD
 userschema.methods.comparePass = async function (password) {
    return bcrypt.compare(password, this.password)
