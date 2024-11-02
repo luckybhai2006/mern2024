@@ -6,6 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 const Navbar = () => {
   const [token, setToken] = useState(localStorage.getItem('token'));
   const [user, setUser] = useState(null); // To store user data
+  const [isAdmin, setIsAdmin] = useState(false); // To track admin status
   const [isNavbarOpen, setIsNavbarOpen] = useState(false); // State to track navbar toggle
   const navigate = useNavigate();
 
@@ -29,13 +30,16 @@ const Navbar = () => {
 
         if (response.ok) {
           const data = await response.json();
-          setUser(data.userData); // Assuming the user data is returned here
+          setUser(data.userData);
+          setIsAdmin(data.userData.isAdmin); // Assuming isAdmin is a property from backend response
         } else {
           console.error('Failed to fetch user data');
         }
       };
 
       fetchUserData();
+    } else {
+      setIsAdmin(false); // Reset if token is null
     }
   }, [token]);
 
@@ -53,6 +57,7 @@ const Navbar = () => {
     localStorage.removeItem('token'); // Clear the token
     setToken(null); // Update the state
     setUser(null); // Clear user data
+    setIsAdmin(false); // Reset admin status
     navigate("/login"); // Navigate to login
     closeNavbar(); // Close the navbar after logging out
   };
@@ -91,6 +96,11 @@ const Navbar = () => {
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/" onClick={logoutAndRedirect}>Logout</NavLink>
                 </li>
+                {isAdmin && ( // Show only if user is admin
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/admin">Admin Pannel</NavLink>
+                  </li>
+                )}
               </>
             ) : (
               <>

@@ -13,6 +13,7 @@ const Register = () => {
       password: "",
       profileImage: null,
    });
+   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
    const navigate = useNavigate();
 
@@ -74,6 +75,11 @@ const Register = () => {
       }
    };
 
+   // Toggle password visibility
+   const togglePasswordVisibility = () => {
+      setShowPassword(!showPassword);
+   };
+
    return (
       <>
          <section>
@@ -100,7 +106,25 @@ const Register = () => {
                            </div>
                            <div>
                               <label htmlFor="password">Password</label>
-                              <input type="password" name="password" placeholder="Password" id="password" required autoComplete="off" value={user.password} onChange={handelInput} />
+                              <div style={{ display: "flex", alignItems: "center" }}>
+                                 <input
+                                    type={showPassword ? "text" : "password"} // Toggle between "text" and "password" type
+                                    name="password"
+                                    placeholder="Password"
+                                    id="password"
+                                    required
+                                    autoComplete="off"
+                                    value={user.password}
+                                    onChange={handelInput}
+                                 />
+                                 <button
+                                    type="button"
+                                    onClick={togglePasswordVisibility}
+                                    style={{ marginLeft: "8px", cursor: "pointer" }}
+                                 >
+                                    {showPassword ? "Hide" : "Show"}
+                                 </button>
+                              </div>
                            </div>
                            <br />
                            <button type="submit" className="btn-submit">Register</button>
